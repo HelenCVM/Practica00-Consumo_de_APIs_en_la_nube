@@ -33,7 +33,7 @@ function cargarDatos()
                 document.getElementById("tablaDatosPersonalesDetalles").innerHTML= detalles;
             }
         };
-        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo ,true);
+        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=1-5",true);
         xmlhttp.send();
     }
     return false;
