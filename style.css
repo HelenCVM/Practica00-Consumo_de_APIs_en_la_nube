@@ -1,9 +1,26 @@
 html{
 	width: 98%;
-	height: 95%;
+	height: 100%;
 	border: rgb(26, 29, 26) 10px double; 
 	overflow-y:scroll;
 }
+
+.contenedor1 {
+	width: 1000px;
+	height: 50px;
+	margin: 50px auto;
+	background: #fff;
+	padding-left:500px;
+	
+}
+
+.contenedor1 h1 {
+	font-family: 'Open Sans';
+	background-color:#ff9d00;
+	width: 9em;
+	text-align: center;
+}
+
 
 body {
 
@@ -14,8 +31,9 @@ body {
 }
 
 .imag  {
-	width: 1320px;
-	height: 400px;
+	width: 1300px;
+	height: 300px;
+
 }
 
 
@@ -63,5 +81,13 @@ p {
 	border-radius: 5px;
 }
 
+
+.footerin {
+	font-family: Arial, Helvetica, sans-serif;
+	align-items: center;
+	text-align: center;
+	position: fixed;
+	
+}
 
 
