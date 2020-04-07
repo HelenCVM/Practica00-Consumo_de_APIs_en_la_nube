@@ -1,0 +1,67 @@
+html{
+	width: 98%;
+	height: 95%;
+	border: rgb(26, 29, 26) 10px double; 
+	overflow-y:scroll;
+}
+
+body {
+
+	border-radius: 10em;
+	background-color: white;
+	border-bottom-width: 0.2em;
+	
+}
+
+.imag  {
+	width: 1320px;
+	height: 400px;
+}
+
+
+.contenedor {
+	width: 1000px;
+	height: 100px;
+	margin: 50px auto;
+	padding: 20px;
+	background: #fff;
+	overflow: auto;
+	font-family: 'Open Sans';
+	border-radius: 4px;
+}
+
+.contenedor h1 {
+	font-size: 38px;
+	font-weight: 600;
+	color: #000;
+}
+
+.contenedor hr {
+	background: #ff9d00;
+	width: 20%;
+	height: 5px;
+	border: none;
+	margin: 20px 0;
+	border-radius: 50px;
+}
+
+p {
+	margin-bottom: 20px;
+	line-height: 28px;
+	font-size: 16px;
+	color: #414141;
+}
+
+/* Scroll Personalizado */
+
+.contenedor::-webkit-scrollbar {
+	width: 7px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+	background: #ff9d00;
+	border-radius: 5px;
+}
+
+
+
