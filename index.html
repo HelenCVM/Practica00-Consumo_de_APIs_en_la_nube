@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peliculas</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="funciones.js"></script>
 </head>
 <body>
     <header>
-        <img class ="imag" src="Peliculas.png" alt="Tri and Succeed Sports" />
+     <!--  <img class ="imag" src="Peliculas.png" alt="Tri and Succeed Sports" />  --> 
     </header>
     
     <div class="contenedor1">
-		<h1>Busqueda</h1>
-        <input type="text" id="firstname" name="firstname"> 
-         <button type="button" onclick="alert('Hello World!')">Click Me!</button> 
+        <h1>Busqueda</h1>
+        <label for="Name">By Title!</label>
+        <input type="text" id="titulo" name="titulo">
+        <input type="button" value="Mostrar datos" onclick="cargarDatos()"><br><br>
     </div>
 
     <div class="contenedor">
 		<h1>Peliculas</h1>
 		<hr>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti consectetur minus deleniti culpa ducimus alias blanditiis, suscipit eligendi vel quam magni ad quasi iure? Nulla dolorum repellat atque laboriosam. Vel?</p>
+		<p>
+            <table id="tablaDatosPersonalesCabecera" class="dat">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th> Year</th>
+                        <th> Type</th>
+                        <th> Poster</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaDatosPersonalesDetalles">  
+             
+                </tbody>
+             
+              </table>
+        </p>
 
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt.</p>
-
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt.</p>
+		
     </div>
     
     
