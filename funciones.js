@@ -72,3 +72,17 @@ function buscarPeliculaPorId(id){
         return false;
 }
 
+function next() {
+    if (i < len-1) {
+      i++;
+      displayCD(i);
+    }
+  }
+  
+  function previous() {
+    if (i > 0) {
+      i--;
+      displayCD(i);
+    }
+  }
+
