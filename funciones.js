@@ -19,7 +19,6 @@ function cargarDatos()
         xmlhttp.onreadystatechange =function(){
             if(this.readyState == 4 && this.status ==200){
                 var data=JSON.parse(this.responseText)
-
                 data.Search.forEach(movie => {
                     detalles += "<tr>" +
                     "<td><a href='#' onclick=\"buscarPeliculaPorId('" + movie.imdbID + "' )\">Detalles" +
@@ -30,10 +29,12 @@ function cargarDatos()
                     "</tr>";
                     
                 });
+                
                 document.getElementById("tablaDatosPersonalesDetalles").innerHTML= detalles;
+                
             }
         };
-        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=1-5",true);
+        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=" + 1 + "&rows=" + 5,true);
         xmlhttp.send();
     }
     return false;
