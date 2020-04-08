@@ -58,10 +58,7 @@ function buscarPeliculaPorId(id){
                 if(this.readyState == 4 && this.status ==200){
                     var data=JSON.parse(this.responseText)
                     console.log(data);
-                    var x;
-                    for (x in data) {
-                        detalles += data[x] + " ";
-                      };
+                    detalles=Object.values(data);
                     document.getElementById("detalles").innerHTML= detalles;
                 }
             };
