@@ -45,7 +45,7 @@ function buscarPeliculaPorId(id){
     var detalles="";
     if(id==""){
         detalles="No hay informacion disponible"
-        document.getElementById("tablaDatosPersonalesDetalles").innerHTML=detalles;
+        document.getElementById("detalles").innerHTML=detalles;
     } else {
             if(window.XMLHttpRequest){
                 xmlhttp =new XMLHttpRequest();
@@ -58,8 +58,11 @@ function buscarPeliculaPorId(id){
                 if(this.readyState == 4 && this.status ==200){
                     var data=JSON.parse(this.responseText)
                     console.log(data);
-                   
-                    document.getElementById("tablaDatosPersonalesDetalles").innerHTML= data;
+                    var x;
+                    for (x in data) {
+                        detalles += data[x] + " ";
+                      };
+                    document.getElementById("detalles").innerHTML= detalles;
                 }
             };
             xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&i=" + id + "&plot=full",true);
