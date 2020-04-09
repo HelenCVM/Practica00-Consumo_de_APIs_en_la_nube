@@ -1,6 +1,8 @@
-function cargarDatos()
+function cargarDatos(valores)
 {
     var titulo = document.getElementById("titulo").value;
+    
+    var valor=valores.value;
     var detalles="";
     if(titulo == ""){
         detalles="<tr>" +
@@ -19,6 +21,10 @@ function cargarDatos()
         xmlhttp.onreadystatechange =function(){
             if(this.readyState == 4 && this.status ==200){
                 var data=JSON.parse(this.responseText)
+                
+                console.log(data)
+                con=Math.round(data.totalResults/10);
+                console.log(con);
                 data.Search.forEach(movie => {
                     detalles += "<tr>" +
                     "<td><a href='#' onclick=\"buscarPeliculaPorId('" + movie.imdbID + "' )\">Detalles" +
@@ -29,12 +35,16 @@ function cargarDatos()
                     "</tr>";
                     
                 });
+
+                
+                
                 
                 document.getElementById("tablaDatosPersonalesDetalles").innerHTML= detalles;
                 
             }
         };
-        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=" + 1 + "&rows=" + 5,true);
+        
+        xmlhttp.open("GET","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=" + valor ,true);
         xmlhttp.send();
     }
     return false;
@@ -72,17 +82,56 @@ function buscarPeliculaPorId(id){
         return false;
 }
 
-function next() {
-    if (i < len-1) {
-      i++;
-      displayCD(i);
-    }
-  }
-  
-  function previous() {
-    if (i > 0) {
-      i--;
-      displayCD(i);
-    }
-  }
 
+var siguiente=1;
+function next()
+{
+
+    var titulo = document.getElementById("titulo").value;
+    siguiente=siguiente+1;
+    
+    var detalles="";
+    if(titulo == ""){
+        detalles="<tr>" +
+        "<td colspan='5' > No hay informacion disponible </td>" +
+        "</tr>";
+        document.getElementById("tablaDatosPersonalesDetalles").innerHTML=detalles;
+
+    }else {
+        if(window.XMLHttpRequest){
+            xmlhttp =new XMLHttpRequest();
+
+        }else {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange =function(){
+            if(this.readyState == 4 && this.status ==200){
+                var data=JSON.parse(this.responseText)
+                
+                console.log(data)
+                con=Math.round(data.totalResults/10);
+                console.log(con);
+                data.Search.forEach(movie => {
+                    detalles += "<tr>" +
+                    "<td><a href='#' onclick=\"buscarPeliculaPorId('" + movie.imdbID + "' )\">Detalles" +
+                    "<td>" + movie.Title + "</td>" +
+                    "<td>" + movie.Year + "</td>" +
+                    "<td>" + movie.Type + "</td>" +
+                    "<td><img src=" + movie.Poster + "></td>" +
+                    "</tr>";
+                    
+                });
+
+                
+                
+                
+                document.getElementById("tablaDatosPersonalesDetalles").innerHTML= detalles;
+                
+            }
+        };
+        
+        xmlhttp.open("POST","http://www.omdbapi.com/?apikey=bae08925&s=" + titulo + "&page=" + siguiente + "&plot=full",true);
+        xmlhttp.send();
+    }
+}

@@ -7,20 +7,22 @@
     <title>Peliculas</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="funciones.js"></script>
+    
 </head>
 
 <body>
     <header>
-        <!--  <img class ="imag" src="Peliculas.png" alt="Tri and Succeed Sports" />  -->
+        <img class ="imag" src="Peliculas.png" alt="Tri and Succeed Sports" />
     </header>
 
     <div class="contenedor1">
         <h1>Movies</h1>
         <label for="Name">By Title!</label>
         <input type="text" id="titulo" name="titulo">
-        <input type="button" value="Mostrar datos" onclick="cargarDatos()"><br><br>
-        <input type="button" onclick="previous()" value="<<">
-        <input type="button" onclick="next()" value=">>">
+        <input type="button" value="Mostrar datos" onclick="cargarDatos(this)"><br><br>
+        <input type="button" id="uno" value="1" onclick="return cargarDatos(this)" />
+        
+        <input type="button" id="uno" value=">" onclick="next()" />
 
     </div>
 
