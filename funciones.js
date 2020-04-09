@@ -69,10 +69,26 @@ function buscarPeliculaPorId(id){
                 if(this.readyState == 4 && this.status ==200){
                     var data=JSON.parse(this.responseText)
                     var x;
-                    for (x in data) {
-                        detalles += data[x] + " <br> ";
-                      };
-
+                    detalles+=  "<h2>" +data.Title+"</h2>"
+                       +    "<h3>Rate:"+data.Rate+"</h3>"
+                       +    "<h3>Released: "+data.Released+"</h3>"
+                       +    "<h3>Runtime:"+data.Runtime+"</h3>"
+                       +    "<h3>Genre:"+data.Genre+"</h3>"
+                       +    "<h3>Director:"+data.Director+"</h3>"
+                       +    "<h3>Writer: "+data.Writer+"</h3>"
+                       +    "<h3>Actor:"+data.Actors+"</h3>"
+                       +    "<h3>Plot:"+data.Plot+"</h3>"
+                       +    "<h3>Language:"+data.Language+"</h3>"
+                       +    "<h3>Country:"+data.Country+"</h3>"
+                       +    "<h3>Metascore:"+data.Metascore+"</h3>"
+                       +    "<h3>imdbRating:"+data.imdbRating+"</h3>"
+                       +    "<h3>imdbVotes:"+data.imdbVotes+"</h3>"
+                       +    "<h3>DVD:"+data.DVD+"</h3>"
+                       +    "<h3>BoxOffice:"+data.BoxOffice+"</h3>"
+                       +    "<h3>Production:"+data.Production+"</h3>"
+                       +    "<h3>Website:"+data.Website+"</h3>"
+                       +    "<h3>Response:"+data.Response+"</h3>"
+                    
                     document.getElementById("detalles").innerHTML= detalles;
                 }
             };

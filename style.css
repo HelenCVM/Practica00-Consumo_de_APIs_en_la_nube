@@ -54,6 +54,18 @@ body {
     border: 2px solid #ff9d00;
 
 }
+
+h2{
+	font-size: 20px;
+	text-align: center;
+}
+
+h3{
+    font-size: 20px;
+	color: #e09112;
+	text-align: center;
+}
+
 .titul{
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	color: #e09112;
