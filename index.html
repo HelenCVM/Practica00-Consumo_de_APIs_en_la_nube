@@ -17,12 +17,12 @@
 
     <div class="contenedor1">
         <h1>Movies</h1>
-        <label for="Name">By Title!</label>
-        <input type="text" id="titulo" name="titulo">
-        <input type="button" value="Mostrar datos" onclick="cargarDatos(this)"><br><br>
-        <input type="button" id="uno" value="1" onclick="return cargarDatos(this)" />
-        
-        <input type="button" id="uno" value=">" onclick="next()" />
+        <label class="titul" for="Name">By Title!</label>
+        <input class="titu" type="text" id="titulo" name="titulo">
+        <input class="botoncargar" type="button" value="Mostrar datos" onclick="cargarDatos(this)"><br><br>
+        <input class="botoncargar" type="button" id="uno" value="1" onclick="return cargarDatos(this)" />
+        <input class="botoncargar" type="button" id="dos" value="2" onclick="return cargarDatos(this)" />
+        <input class="botoncargar" type="button" id="dos" value=">" onclick="next()" />
 
     </div>
 
@@ -36,6 +36,7 @@
                         <table id="tablaDatosPersonalesCabecera" class="dat">
                             <thead>
                                 <tr>
+                                    <th>Busqueda por ID</th>
                                     <th>Title</th>
                                     <th> Year</th>
                                     <th> Type</th>
@@ -49,6 +50,7 @@
                         </table>
                     </td>
                 </tr>
+               
                 <tr>
 
                     <td>
